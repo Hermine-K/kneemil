@@ -1,0 +1,26 @@
+# Competition data and anything derived from it must never be committed
+*.dcm
+*.npy
+*.npz
+*.parquet
+*.pt
+*.pth
+*.csv
+data/
+input/
+working/
+wheels/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Documentation build
+site/

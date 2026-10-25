@@ -1,0 +1,47 @@
+site_name: KneeMIL
+site_description: Knee MRI abnormality detection from weak, multilingual radiology report supervision
+site_author: Hermine Kiossou
+repo_url: https://github.com/Hermine-K/kneemil
+repo_name: Hermine-K/kneemil
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - The problem: problem.md
+  - Architecture: architecture.md
+  - LLM labelling: llm-labelling.md
+  - Training and evaluation: training.md
+  - Results: results.md
+  - Running the pipeline: running.md
+  - Python package: package.md
+  - Lessons and limitations: lessons.md

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kneemil"
+version = "1.0.0"
+description = "Knee MRI abnormality detection from weak, multilingual radiology report supervision (RSNA 2026 challenge)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Hermine Kiossou" }]
+keywords = ["medical imaging", "MRI", "multiple instance learning", "weak supervision", "LLM", "Kaggle"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "opencv-python-headless",
+    "pydicom>=3.0",
+]
+
+[project.optional-dependencies]
+dicom-codecs = ["pylibjpeg", "pylibjpeg-libjpeg", "pylibjpeg-openjpeg"]
+model = ["torch", "timm"]
+llm = ["torch", "transformers>=4.44", "accelerate"]
+dev = ["pytest", "ruff"]
+docs = ["mkdocs-material"]
+
+[project.urls]
+Documentation = "https://kneemil.readthedocs.io"
+Source = "https://github.com/Hermine-K/kneemil"
+Competition = "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/kneemil/labels.py" = ["E501"]
