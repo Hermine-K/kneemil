@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install (without torch: model tests are skipped)
+      - name: Install without torch (model tests are skipped)
         run: pip install -e ".[dev]"
       - name: Lint
         run: ruff check src tests
